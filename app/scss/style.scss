@@ -3,6 +3,22 @@
 @import 'reset';
 @import 'global';
 
+.header {
+  padding: 60px 0;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between
+}
+
+.menu {
+  display: flex;
+  &__item:not(:last-child) {
+    margin-right: 40px;
+  }
+  
+}
 
 
 
