@@ -25,3 +25,11 @@ body {
 .section {
   margin-bottom: 120px;
 }
+
+.btn {
+  text-decoration: none;
+  background-color: $accent;
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 5px;
+}
