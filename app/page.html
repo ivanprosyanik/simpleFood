@@ -32,36 +32,100 @@
           <li class="menu__item">
             <a class="menu__link" href="#">Контакти</a>
           </li>
-        </ul>
-        <div class="user-nav">
-          <a class="user-nav__search" href="#"></a>
-          <a class="user-nav__cart" href="#">
+          <button class="user-nav__btn user-nav--search icon-btn" type="button"></button>
+          <button class="user-nav__btn user-nav--cart icon-btn" type="button">
             <span class="user-nav__num">4</span>
-          </a>
-        </div>
+          </button>
+        </ul>
       </nav>
     </div>
   </header>
   <main class="main">
-
   </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
         <form class="footer-form" action="#">
-          <a class="logo" href="#">
+          <a class="logo footer-logo" href="#">
             <img class="logo__img" src="images/logo.svg" alt="Логотип">
           </a>
-          <label for=""></label>
-          <input type="text" placeholder="email">
-          <button class="btn footer-form__btn"></button>
+          <label class="footer-form__label sr-only" for="email"></label>
+          <input class="footer-form__input" type="text" placeholder="Ваш email" id="email" required>
+          <button class="btn footer-form__btn btn--with-icon">Підписатися</button>
         </form>
-      </div>
-      <div class="footer__bottom">
-        <p class="copy">© 2023 Simple Food</p>
+        <div class="footer-menu">
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Як це працює</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Продукти</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Страви</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Меню</a>
+            </li>
+          </ul>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Про нас</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Новини</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Партнери</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">ЧаПи</a>
+            </li>
+          </ul>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Застосунок</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Блог</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Що нового?</a>
+            </li>
+            <li class="footer-menu__item">
+              <a class="footer-menu__link" href="#">Мапа сайту</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-menu__address">
+          <ul class="footer-menu__data">
+            <li class="footer-menu__location">вул. Т.Г.Шевченка, 1</li>
+            <li class="footer-menu__phone">
+              <a class="footer-menu__phone-link" href="tel:380501112233">380501112233</a>
+            </li>
+            <li class="footer-menu__mail">
+              <a class="footer-menu__mail-link" href="mailto:support@sfood.com">support@sfood.com</a>
+            </li>
+          </ul>
+          <ul class="footer-menu__social">
+            <li class="footer-social__item">
+              <a class="footer-social__link footer-social__link--facebook" href="#"></a>
+            </li>
+            <li class="footer-social__item">
+              <a class="footer-social__link footer-social__link--twitter" href="#"></a>
+            </li>
+            <li class="footer-social__item">
+              <a class="footer-social__link footer-social__link--instagram" href="#"></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+    <div class="footer__bottom">
+      <p class="copy">© 2023 Simple Food</p>
+    </div>
   </footer>
+
   <script src="js/main.min.js"></script>
 </body>
 

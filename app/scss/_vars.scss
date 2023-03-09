@@ -2,6 +2,12 @@ $accent: #ff6838;
 $default: #31352b;
 $title: #363853;
 
+$accent-focus: rgba(255, 104, 56, 0.1);
+
+%outline {
+  outline: 2px solid rgba(255, 104, 56, 0.7);
+} 
+
 
 %rubik-300 {
   font-family: 'Rubik-Light', sans-serif;
