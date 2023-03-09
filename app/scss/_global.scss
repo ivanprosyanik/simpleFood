@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.4;
+  @extend %rubik-400;
+  color: $default;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F9FAFF;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  margin-bottom: 120px;
+}
+
+.title {
+  @extend %rubik-500;
+  font-size: calc(24px + (36 - 24) * ((100vw - 375px) / (1905 - 375)));
+  color: $title;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.btn {
+  background-color: $accent;
+  color: #fff;
+  padding: 13px 37px;
+  border-radius: 5px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
