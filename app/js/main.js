@@ -2,7 +2,7 @@ $(function() {
 
 
 
-  var mixer = mixitup('.category__cards', {
+  var mixer = mixitup('.category-cards', {
     load: {
       filter: '.category-a'
     }
