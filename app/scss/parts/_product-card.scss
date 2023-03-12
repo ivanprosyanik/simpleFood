@@ -1,0 +1,52 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: 1px solid $silver-200;
+  height: 100%;
+  transition: outline-color .3s;
+
+  &:hover {
+    outline-color: $accent;
+  }
+
+  &__link {
+    outline-color: $accent;
+    &:first-child {
+      order: 2;
+    }
+
+    &:nth-child(2) {
+      order: 1;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  &__img {
+    object-fit: contain;
+    width: 140px;
+    height: 140px;
+  }
+
+  &__price {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $title;
+    order: 3;
+    margin-top: auto;
+  }
+
+  &__btn {
+    order: 4;
+  }
+}

@@ -9,7 +9,7 @@ html {
 }
 
 ul,
-ol {
+ol {  
   padding: 0;
 }
 
@@ -41,14 +41,6 @@ img {
   display: block;
 }
 
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 button {
   padding: 0;
   background-color: transparent;
@@ -57,10 +49,12 @@ button {
 a {
   color: inherit;
   display: inline-block;
+  text-decoration: none;
 }
 
 input,
 textarea,
+select,
 button {
   font: inherit;
   color: inherit;
@@ -72,4 +66,8 @@ button {
 
 body {
   min-height: 100vh;
+}
+
+address {
+  font-style: normal;
 }

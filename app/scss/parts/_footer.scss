@@ -1,0 +1,185 @@
+.footer {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    margin-bottom: 60px;
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-flow: column;
+    gap: 20px 90px;
+
+    .menu__item {
+      grid-column: 3;
+
+      &:nth-child(-n+4) {
+        grid-column: 1;
+      }
+
+      &:nth-child(n+5):nth-child(-n+8) {
+        grid-column: 2;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-left: auto;
+    margin-right: 80px;
+  }
+
+  &__bottom {
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    background-color: $title;
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+.subscription {
+
+  .form__field {
+    width: 200px;
+    margin-bottom: 12px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 200px;
+    padding: 11px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+
+    &::before {
+      min-width: 16px;
+      background-color: #fff;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+      &::before {
+        background-color: $accent;
+      }
+    }
+  }
+}
+
+.form {
+  &__field {
+    border-radius: 5px;
+    outline: 1px solid $gray;
+    padding: 11px 15px;
+    transition: outline-color .3s, outline-width .15s;
+
+    &::placeholder {
+      font-size: 14px;
+      color: $gray;
+      transition: color .3s;
+    }
+
+    &:focus {
+      outline-color: $accent;
+      outline-width: 2px;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $default;
+      }
+    }
+  }
+}
+
+.contacts {
+  &__list {}
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    line-height: 2;
+    gap: 7px;
+    justify-content: start;
+    outline: 2px solid transparent;
+    transition: outline-color .3s, color .3s, text-shadow .3s;
+
+    &:focus {
+      outline-color: rgba($accent, .7);
+    }
+
+    &:hover {
+      color: $accent;
+
+      &::before {
+        background-color: $accent;
+      }
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px rgba($default, .5);
+      outline-color: transparent;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  gap: 13px;
+
+  &__link {
+    min-width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $silver-200;
+    border-radius: 50%;
+    outline: 2px solid transparent;
+    transition: outline-color .3s, bakcground-color .3s;
+
+    &:focus {
+      outline-color: rgba($accent, .7);
+      background-color: rgba($accent, .1);
+    }
+
+    &:hover {
+      background-color: $accent;
+
+      .social__icon {
+        background-color: #fff;
+      }
+    }
+
+    &:active {
+      outline-color: transparent;
+      background-color: rgba($accent, .1);
+
+      .social__icon {
+        background-color: $accent;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: $title;
+  }
+}
