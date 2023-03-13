@@ -103,6 +103,12 @@ body {
     }
   }
 
+  &--send {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-arrow-right);
+    }
+  }
+
   &:hover {
     &::before {
       background-color: #fff;
