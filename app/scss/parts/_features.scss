@@ -1,0 +1,76 @@
+$leftPos: calc((100vw - 1030px) / 2);
+.features {
+  min-height: 585px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left $leftPos center;
+  display: flex;
+  align-items: center;
+
+  &__content {
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__title {
+    text-align: start;
+    margin-bottom: 0;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    padding-left: 64px;
+    font-size: 24px;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      mask-image: url(../../images/sprite.svg#icon-timer);
+      mask-size: contain;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: $accent;
+    }
+  }
+
+
+  &__item--courier {
+    &::before {
+      mask-image: url(../../images/sprite.svg#icon-delivery);
+      background-color: #00AAFF;
+    }
+  }
+
+  &__item--restuarant {
+    &::before {
+      mask-image: url(../../images/sprite.svg#icon-restorant);
+    }
+  }
+
+  &__btn {
+    max-width: 170px;
+  }
+}
