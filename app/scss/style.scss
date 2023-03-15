@@ -3,6 +3,7 @@
 @import 'colors';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 @import 'parts/header';
@@ -14,3 +15,6 @@
 @import 'parts/features';
 @import 'parts/restaurants';
 @import 'parts/restaurants-card';
+@import 'parts/reviews';
+@import 'parts/reviews-slider';
+@import 'parts/download-section';

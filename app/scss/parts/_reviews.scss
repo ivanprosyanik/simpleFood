@@ -1,0 +1,56 @@
+.reviews-quote {
+  display: flex;
+  align-items: center;
+  padding: 0 90px;
+  gap: 80px;
+
+  &__img {
+    border-radius: 50%;
+  }
+
+  &__inner {
+    font-size: 20px;
+  }
+
+  &__text {
+    max-width: 570px;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      background-color: $gray;
+    }
+
+    &::before {
+      mask-image: url(../../images/sprite.svg#icon-quote-open);
+      top: 0;
+      left: -40px;
+    }
+
+    &::after {
+      mask-image: url(../../images/sprite.svg#icon-quote-close);
+      bottom: 0;
+      right: -40px;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    margin-bottom: 9px;
+  }
+
+  &__job {
+    font-size: 14px;
+  }
+}
+

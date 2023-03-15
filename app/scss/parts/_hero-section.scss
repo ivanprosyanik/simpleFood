@@ -8,6 +8,10 @@ $rightPos: calc( (100vw - 1170px) / 2);
   background-size: contain;
   background-position: right $rightPos center;
 
+  &__content {
+    max-width: 476px;
+  }
+
   &__title {
     max-width: 480px;
     @include fz(66, 40);
@@ -26,6 +30,7 @@ $rightPos: calc( (100vw - 1170px) / 2);
     line-height: 1.5;
     margin-bottom: 20px;
     font-size: 20px;
+    @include line-clamp(4);
   }
 
   &__actions {
