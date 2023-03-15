@@ -27,3 +27,11 @@
        url('../fonts/Rubik-Medium.woff') format('woff');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-style: italic;
+  src: url('../fonts/Rubik-Italic.woff2') format('woff2');
+  font-display: swap;
+}

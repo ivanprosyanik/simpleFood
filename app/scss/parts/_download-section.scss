@@ -1,0 +1,31 @@
+.download {
+  padding-top: 60px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right center;
+  }
+
+  &__title {
+    text-align: start;
+    margin-bottom: 45px;
+  }
+
+  &__content {
+    max-width: 470px;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+}
+
+.download-links {
+  display: flex;
+  gap: 30px;
+}

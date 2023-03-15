@@ -24,6 +24,7 @@ $leftPos: calc((100vw - 1030px) / 2);
   &__text {
     font-size: 20px;
     line-height: 1.5;
+    @include line-clamp(4);
   }
 
   &__list {
