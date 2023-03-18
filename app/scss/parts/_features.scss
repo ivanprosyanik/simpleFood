@@ -1,77 +1,70 @@
-$leftPos: calc((100vw - 1030px) / 2);
 .features {
-  min-height: 585px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left $leftPos center;
-  display: flex;
-  align-items: center;
+  &__inner {
+    min-height: 585px;
+    padding: 0 size(70, 0);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left size(70, 0) center;
+  }
 
   &__content {
     max-width: 470px;
-    margin-left: auto;
-    margin-right: 70px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    background-color: rgba(255, 255, 255, .85);
+    align-self: flex-end;
   }
 
   &__title {
-    text-align: start;
-    margin-bottom: 0;
+    margin-bottom: 30px;
+    text-align: left;
   }
 
   &__text {
     font-size: 20px;
     line-height: 1.5;
-    @include line-clamp(4);
+    margin-bottom: 30px;
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    margin-bottom: 30px;
   }
 
   &__item {
-    padding-left: 64px;
     font-size: 24px;
     line-height: 1.5;
-    position: relative;
-    display: flex;
-    align-items: center;
+    color: $title;
+    gap: 30px;
+    justify-content: flex-start;
 
     &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 34px;
+      min-width: 34px;
       height: 34px;
-      mask-image: url(../../images/sprite.svg#icon-timer);
-      mask-size: contain;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      background-color: $accent;
     }
-  }
 
-
-  &__item--courier {
-    &::before {
-      mask-image: url(../../images/sprite.svg#icon-delivery);
-      background-color: #00AAFF;
+    &.icon--delivery {
+      &::before {
+        background-color: $accent;
+      }
     }
-  }
 
-  &__item--restuarant {
-    &::before {
-      mask-image: url(../../images/sprite.svg#icon-restorant);
+    &.icon--courier {
+      &::before {
+        background-color: #00AAFF;
+      }
     }
-  }
 
-  &__btn {
-    max-width: 170px;
+    &.icon--build {
+      &::before {
+        background-color: #FF2222;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
   }
 }

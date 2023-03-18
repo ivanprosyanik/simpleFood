@@ -1,0 +1,71 @@
+.reviews-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 5px size(90, 0);
+
+  &__content {
+    max-width: 650px;
+    padding: 0 40px;
+    flex-basis: 320px;
+    flex-grow: 1;
+    width: 100%;
+  }
+  &__img {
+    border-radius: 50%;
+    max-width: size(300, 100);
+    width: 100%;
+    height: size(300, 100);
+    flex-basis: 100px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    position: relative;
+    margin-bottom: 30px;
+    font-style: italic;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;  
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      mask-image: url('../images/sprite.svg#icon-quote-open');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $gray;
+    }
+
+    &::before {
+      top: 0;
+      left: -40px;
+    }
+
+    &::after {
+      bottom: 0;
+      right: -40px;
+      mask-image: url('../images/sprite.svg#icon-quote-close');
+    }
+  }
+
+  &__info {}
+
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+    color: $accent;
+    margin-bottom: 15px;
+  }
+
+  &__details {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,40 @@
+.download {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right $rightPos center;
+  &__content {
+    max-width: 470px;
+    padding: 40px 0;
+    background-color: rgba(#fff, .85);
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: left;
+  }
+
+  &__info {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.app-icon {
+  display: block;
+  width: 120px;
+  height: 40px;
+  background-image: url(../../images/app_store.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  &--google{
+    width: 135px;
+    background-image: url(../../images/play_store.svg);
+  }
+}

@@ -22,7 +22,6 @@
     "jquery": "^3.6.3",
     "mixitup": "^3.3.1",
     "sass": "^1.58.3",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^9.1.0"
+    "slick-carousel": "^1.8.1"
   }
 }

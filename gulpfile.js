@@ -33,33 +33,28 @@ function styles() {
     .pipe(browserSync.stream())
 }
 
-function scripts() {
-  return src([
-    "node_modules/jquery/dist/jquery.js",
-    "node_modules/slick-carousel/slick/slick.js",
-    "app/js/main.js",
+// function scripts() {
+//   return src(["app/js/main.js"])
+//   .pipe(concat('main.js'))
+//   .pipe(dest('app/js'))
+//   .pipe(browserSync.stream())
+// }
 
-  ])
-  .pipe(concat('main.js'))
-  .pipe(dest('app/js'))
-  .pipe(browserSync.stream())
-}
-
-function images() {
-  return src('app/images/**/*.*')
-  .pipe(imagemin([
-    imagemin.gifsicle({ interlaced: true }),
-    imagemin.mozjpeg({ quality: 75, progressive: true }),
-    imagemin.optipng({ optimizationLevel: 5 }),
-    imagemin.svgo({
-      plugins: [
-        { removeViewBox: true },
-        { cleanupIDs: false }
-      ]
-    })
-  ]))
-  .pipe(dest('dist/images'))
-}
+// function images() {
+//   return src('app/images/**/*.*')
+//   .pipe(imagemin([
+//     imagemin.gifsicle({ interlaced: true }),
+//     imagemin.mozjpeg({ quality: 75, progressive: true }),
+//     imagemin.optipng({ optimizationLevel: 5 }),
+//     imagemin.svgo({
+//       plugins: [
+//         { removeViewBox: true },
+//         { cleanupIDs: false }
+//       ]
+//     })
+//   ]))
+//   .pipe(dest('dist/images'))
+// }
 
 function svgSprites() {
   return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
@@ -102,13 +97,13 @@ function watching() {
 }
 
 exports.styles = styles;
-exports.scripts = scripts;
+// exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
-exports.images = images;
+// exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
 exports.convertFonts = convertFonts;
-exports.build = series(cleanDist, images, build);
+exports.build = series(cleanDist, build);
 
-exports.default = parallel(svgSprites, scripts, styles, browsersync, watching);
+exports.default = parallel(svgSprites, styles, browsersync, watching);
