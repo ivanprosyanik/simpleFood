@@ -2,21 +2,44 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right $rightPos center;
+
+  @include r($tablet) {
+    background-position: right center;
+  }
+
+  @include r($phone) {
+    box-shadow: inset 0 0 0 1920px rgba(#fff, 1);
+  }
+
   &__content {
     max-width: 470px;
     padding: 40px 0;
     background-color: rgba(#fff, .85);
+
+    @include r($phone) {
+      padding: 0;
+      background-color: transparent;
+    }
   }
 
   &__title {
     margin-bottom: 45px;
     text-align: left;
+
+    @include r($tablet) {
+      margin-bottom: size(45, 17);
+    }
   }
 
   &__info {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
+
+    @include r($tablet) {
+      @include fz(20, 14);
+      margin-bottom: size(30, 15);
+    }
   }
 
   &__list {
@@ -33,7 +56,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  &--google{
+
+  &--google {
     width: 135px;
     background-image: url(../../images/play_store.svg);
   }

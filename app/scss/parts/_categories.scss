@@ -3,6 +3,18 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 2px 0;
+  overflow-y: auto;
+
+  @include r($tablet-2) {
+    gap: size(20, 10);
+    padding: 2px;
+  }
+
+  @include r($tablet) {
+    justify-content: start;
+    padding-bottom: 15px;
+  }
 
   &__btn {
     outline: 1px solid $silver-200;
@@ -12,10 +24,22 @@
     color: $title;
     transition: outline-color .3s, color .3s, background-color .3s, box-shadow .3s;
 
+    @include r($desktop) {
+      padding: size(13, 10) size(32, 15);
+      @include fz(20, 14);
+      width: max-content;
+    }
+
     &::before {
       min-width: 44px;
       height: 44px;
       margin-right: 10px;
+
+      @include r($tablet-2) {
+        min-width: size(44, 20);
+        height: size(44, 20);
+        margin-right: 5px;
+      }
     }
 
     &:focus {
@@ -49,7 +73,7 @@
     &.active {
       background-color: $accent;
       color: #fff;
-      
+
       &::before {
         background-color: #fff;
       }
@@ -61,4 +85,18 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
+
+  @include r($tablet-2) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  @include r($tablet) {
+    gap: size(25, 5);
+  }
+
+  @include r($phone) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 5px;
+  }
 }

@@ -1,9 +1,37 @@
 .footer {
+  padding-top: 6px;
   &__content {
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
     margin-bottom: 60px;
+
+    @include r($desktop) {
+      gap: 40px;
+    }
+
+    @include r($tablet) {
+      justify-content: space-between;
+    }
+
+    @include r($phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 28px;
+      margin-bottom: 57px;
+    }
+  }
+
+  &__nav {
+    @include r($tablet) {
+      margin: 0 auto;
+      order: 3;
+    }
+
+    @include r($phone) {
+      margin: 0;
+    }
   }
 
   &__logo {
@@ -15,6 +43,17 @@
     grid-template-columns: repeat(3, auto);
     grid-auto-flow: column;
     gap: 20px 90px;
+
+    @include r($tablet-2) {
+      gap: 20px 45px;
+    }
+
+    @include r($phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
 
     .menu__item {
       grid-column: 3;
@@ -31,7 +70,15 @@
 
   &__contacts {
     margin-left: auto;
-    margin-right: 80px;
+
+    @include r($tablet-2) {
+      margin-left: 0;
+      order: 2;
+    }
+
+    @include r($phone) {
+      order: 2;
+    }
   }
 
   &__bottom {
@@ -39,12 +86,13 @@
     line-height: 1;
     color: #fff;
     background-color: $title;
-    padding: 30px;
+    padding: size(30, 20);
     text-align: center;
   }
 }
 
 .subscription {
+  order: 1;
 
   .form__field {
     width: 200px;

@@ -1,4 +1,4 @@
-$rightPos: calc( (100vw - 1170px) / 2);
+$rightPos: calc((100vw - 1170px) / 2);
 
 .hero {
   min-height: 660px;
@@ -8,8 +8,20 @@ $rightPos: calc( (100vw - 1170px) / 2);
   background-size: contain;
   background-position: right $rightPos center;
 
+  @include r($tablet) {
+    background-position: right 15px top;
+    background-size: size(560, 254);
+    min-height: size(660, 300);
+    align-items: start;
+    box-shadow: inset 0 0 0 1920px rgba(#fff, .85);
+  }
   &__content {
     max-width: 476px;
+    padding: 50px 0;
+
+    @include r($phone) {
+      padding: 20px 0;
+    }
   }
 
   &__title {
@@ -31,12 +43,24 @@ $rightPos: calc( (100vw - 1170px) / 2);
     margin-bottom: 20px;
     font-size: 20px;
     @include line-clamp(4);
+
+    @include r($phone) {
+      font-size: 16px;
+    }
   }
 
   &__actions {
     display: flex;
     align-items: center;
     gap: 25px;
-  }
 
+    .btn {
+      padding: 12px 32px;
+      font-size: 14px;
+
+      @include r($phone) {
+        padding: 8px 24px;
+      }
+    }
+  }
 }

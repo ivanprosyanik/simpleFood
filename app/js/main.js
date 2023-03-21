@@ -54,4 +54,46 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".reviews__btn--prev"
     },
   });
+
+  const burger = document.querySelector('.burger');
+  const burgerClose = document.querySelector('.burger-close');
+  const headerNavMobile = document.querySelector('.nav-mobile');
+  const bodyLock = document.querySelector('body');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('burger--active');
+    headerNavMobile.classList.toggle('--active');
+    if (headerNavMobile.classList.contains('--active')) {
+      bodyLock.classList.add('lock');
+    }
+    else {
+      burger.classList.remove('burger--active');
+      bodyLock.classList.remove('lock');
+    }
+  });
+  burgerClose.addEventListener('click', () => {
+    burger.classList.remove('burger--active');
+    headerNavMobile.classList.remove('--active');
+    bodyLock.classList.remove('lock');
+  });
+  document.addEventListener('click', function (e) {
+    if (e.target !== burger && e.target !== headerNavMobile && e.target !== burgerClose) {
+      burger.classList.remove('burger--active');
+      headerNavMobile.classList.remove('--active');
+      bodyLock.classList.remove('lock');
+    }
+  });
+
+
+  if (window.innerWidth <= 576) {
+    const swiper2 = new Swiper('.resto__slider', {
+      pagination: {
+        el: ".resto__dots",
+        bulletClass: "resto__dot",
+        bulletActiveClass: "resto__dot--active",
+        clickable: true,
+      },
+    })
+  };
 });
+

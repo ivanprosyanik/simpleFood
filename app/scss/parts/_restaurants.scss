@@ -1,7 +1,61 @@
 .restaurants {
-  &__list {}
+  &__list {
+    margin-bottom: 36px;
 
-  &__item {}
+    &.swiper-wrapper {
+      @include r($phone) {
+        display: flex;
+      }
+    }
+  }
 }
 
+.resto {
+  @include r($phone) {
 
+
+    &__actions {
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 23px;
+    }
+
+    &__dots {
+      display: flex;
+      gap: 15px;
+      padding-bottom: 2px;
+    }
+
+    &__dot {
+      min-width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $gray;
+      cursor: pointer;
+      outline: 2px solid transparent;
+      transition: background-color .3s, outline-color .3s;
+
+      &--active {
+        background-color: $accent;
+        border-radius: 50%;
+      }
+
+      &:focus {
+        outline-color: $accent;
+      }
+
+      &:hover {
+        background-color: rgba($accent, .1);
+        outline-color: rgba($accent, .5);
+      }
+
+      &:active {
+        outline-color: transparent;
+        background-color: rgba($accent, .5);
+      }
+    }
+  }
+}

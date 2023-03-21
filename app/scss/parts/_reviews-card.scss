@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: size(40, 25);
   padding: 5px size(90, 0);
 
   &__content {
@@ -13,6 +13,7 @@
     flex-grow: 1;
     width: 100%;
   }
+
   &__img {
     border-radius: 50%;
     max-width: size(300, 100);
@@ -30,10 +31,15 @@
     margin-bottom: 30px;
     font-style: italic;
 
+    @include r($phone) {
+      @include fz(20, 14);
+      margin-bottom: 20px;
+    }
+
     &::before,
     &::after {
       content: '';
-      display: inline-block;  
+      display: inline-block;
       position: absolute;
       width: 24px;
       height: 24px;
@@ -45,24 +51,32 @@
     }
 
     &::before {
-      top: 0;
-      left: -40px;
+      top: -10px;
+      left: -35px;
     }
 
     &::after {
       bottom: 0;
       right: -40px;
       mask-image: url('../images/sprite.svg#icon-quote-close');
+
+      @include r($phone) {
+        right: -34px;
+        bottom: 8px;
+      }
     }
   }
-
-  &__info {}
 
   &__name {
     font-size: 20px;
     font-weight: 500;
     color: $accent;
     margin-bottom: 15px;
+
+    @include r($phone) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__details {

@@ -1,10 +1,18 @@
 .popular {
   &__nav {
     margin-bottom: 45px;
+
+    @include r($phone) {
+      margin-bottom: 15px;
+    }
   }
 
   &__list {
     margin-bottom: 60px;
+
+    @include r($tablet-2) {
+      margin-bottom: size(60, 47);
+    }
   }
 
   &__btn {
@@ -13,6 +21,3 @@
     margin: 0 auto;
   }
 }
-
-
-
