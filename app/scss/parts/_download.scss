@@ -4,7 +4,7 @@
   background-position: right $rightPos center;
 
   @include r($tablet) {
-    background-position: right center;
+    background-position: right 15px center;
   }
 
   @include r($phone) {
@@ -13,33 +13,23 @@
 
   &__content {
     max-width: 470px;
-    padding: 40px 0;
+    padding: size(40, 0) 0;
     background-color: rgba(#fff, .85);
 
     @include r($phone) {
-      padding: 0;
       background-color: transparent;
     }
   }
 
   &__title {
-    margin-bottom: 45px;
+    margin-bottom: size(45, 8);
     text-align: left;
-
-    @include r($tablet) {
-      margin-bottom: size(45, 17);
-    }
   }
 
   &__info {
-    font-size: 20px;
+    font-size: size(20, 14);
     line-height: 1.5;
-    margin-bottom: 30px;
-
-    @include r($tablet) {
-      @include fz(20, 14);
-      margin-bottom: size(30, 15);
-    }
+    margin-bottom: size(30, 15);
   }
 
   &__list {

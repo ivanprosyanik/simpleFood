@@ -1,14 +1,11 @@
 .footer {
   padding-top: 6px;
+
   &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: size(70, 28);
     margin-bottom: 60px;
-
-    @include r($desktop) {
-      gap: 40px;
-    }
 
     @include r($tablet) {
       justify-content: space-between;
@@ -18,7 +15,6 @@
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: 28px;
       margin-bottom: 57px;
     }
   }
@@ -36,17 +32,17 @@
 
   &__logo {
     margin-bottom: 30px;
+
+    @include r($phone) {
+      margin-bottom: 25px;
+    }
   }
 
   &__menu {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-auto-flow: column;
-    gap: 20px 90px;
-
-    @include r($tablet-2) {
-      gap: 20px 45px;
-    }
+    gap: 20px size(90, 45);
 
     @include r($phone) {
       display: flex;

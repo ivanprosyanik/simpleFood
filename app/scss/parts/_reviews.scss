@@ -1,9 +1,10 @@
 .reviews {
-
-  position: relative;
-
   &__list {
     margin-bottom: 30px;
+
+    @include r($phone) {
+      margin-bottom: 0;
+    }
   }
 
   &__actions {
@@ -27,11 +28,6 @@
     cursor: pointer;
     transition: background-color .3s, outline-color .3s, border-color .3s;
 
-    @include r($phone) {
-      position: absolute;
-      top: 7%;
-    }
-
     &::before {
       content: '';
       min-width: 19px;
@@ -45,16 +41,25 @@
       transition: background-color .3s;
     }
 
+    @include r($phone) {
+      position: absolute;
+      top: 30px;
+    }
+
     &--prev {
       &::before {
         mask-image: url('../images/sprite.svg#icon-left');
       }
 
-      left: 38px;
+      @include r($phone) {
+        left: calc(50% - 140px);
+      }
     }
 
     &--next {
-      right: 38px;
+      @include r($phone) {
+        right: calc(50% - 140px);
+      }
     }
 
     &:focus {
@@ -101,10 +106,6 @@
   &__dots {
     display: flex;
     gap: 15px;
-
-    @include r($phone) {
-      display: none;
-    }
   }
 
   &__dot {
@@ -115,10 +116,6 @@
     cursor: pointer;
     outline: 2px solid transparent;
     transition: background-color .3s, outline-color .3s;
-
-    @include r($phone) {
-      display: none;
-    }
 
     &--active {
       background-color: $accent;
@@ -139,4 +136,11 @@
     }
   }
 
+  &__slider {
+    .reviews__dots {
+      @include r($phone) {
+        display: none;
+      }
+    }
+  }
 }

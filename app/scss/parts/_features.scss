@@ -1,6 +1,6 @@
 .features {
   &__inner {
-    min-height: 585px;
+    min-height: size(585, 462);
     padding: 0 size(70, 0);
     margin: 0 auto;
     display: flex;
@@ -11,19 +11,14 @@
     background-position: left size(70, 0) center;
 
     @include r($tablet) {
-      min-height: 470px;
       box-shadow: inset 0 0 0 1920px rgba(#fff, .85);
     }
   }
 
   &__content {
     max-width: 470px;
-    padding: 20px;
+    padding: 25px 0 31px;
     align-self: flex-end;
-
-    @include r($phone) {
-      padding: 0;
-    }
   }
 
   &__title {
@@ -32,37 +27,24 @@
   }
 
   &__text {
-    font-size: 20px;
+    font-size: size(20, 18);
     line-height: 1.5;
-    margin-bottom: 30px;
-
-    @include r($phone) {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
+    margin-bottom: size(30, 20);
   }
 
   &__list {
-    margin-bottom: size(30, 20) ;
-  }
-
-  &__btn {
-    @include r($phone) {
-      padding: 8px 24px;
-      font-size: 14px;
-    }
+    margin-bottom: size(30, 20);
   }
 
   &__item {
-    font-size: 24px;
+    font-size: size(24, 18);
     line-height: 1.5;
     color: $title;
-    gap: 30px;
+    gap: size(30, 10);
     justify-content: flex-start;
 
-    @include r($phone) {
-      @include fz(24, 18);
-      gap: size(30, 10);
+    &:not(:last-child) {
+      margin-bottom: size(20, 15);
     }
 
     &::before {
@@ -87,10 +69,5 @@
         background-color: #FF2222;
       }
     }
-
-    &:not(:last-child) {
-      margin-bottom: size(20, 15);
-    }
-
   }
 }

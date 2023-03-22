@@ -1,0 +1,91 @@
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 300px;
+  background-color: #fff;
+  opacity: 0;
+  transform: translateY(-200%);
+  transition: opacity .3s, transform .3s;
+
+  @include r($tablet-2) {
+    display: block;
+  }
+
+  &.open {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__head {
+    padding: 25px 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    padding: 25px 15px; 
+    display: flex;
+
+    border: {
+      top: 1px solid $gray;
+      bottom: 1px solid $gray;
+    }
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__contacts {
+    padding: 15px;
+  }
+}
+
+.burger {
+  display: none;
+  @include r($tablet-2) {
+    display: flex;
+  }
+  min-width: 44px;
+  height: 44px;
+
+  &::before {
+    min-width: 30px;
+    height: 30px;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    &::before {
+      background-color: $title;
+    }
+  }
+}
+
+.close-btn {
+  min-width: 40px;
+  height: 40px;
+
+  &::before {
+    min-width: 18px;
+    height: 18px;
+  }
+}
+
+.lock {
+  overflow: hidden;
+
+  &::before {
+    @include r($tablet-2) {
+      content: '';
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+    }
+  }
+}

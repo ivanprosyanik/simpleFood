@@ -6,7 +6,9 @@
 @import 'libs';
 @import 'global';
 
+@import 'parts/menu';
 @import 'parts/header';
+@import 'parts/nav-mobile';
 @import 'parts/hero-section';
 @import 'parts/popular-section';
 @import 'parts/categories';
@@ -21,4 +23,3 @@
 
 
 @import 'parts/footer';
-// @import 'parts/restaurants-card';

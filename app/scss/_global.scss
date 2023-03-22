@@ -9,11 +9,7 @@ body {
 
 .wrapper {
   overflow-x: hidden;
-  padding-top: 159px;
-
-  @include r($tablet) {
-    padding-top: 77px;
-  }
+  padding-top: size(159, 72);
 }
 
 
@@ -138,6 +134,18 @@ body {
     }
   }
 
+  &--close {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-close);
+    }
+  }
+
+  &--burger-menu {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-burger);
+    }
+  }
+
   &:hover {
     &::before {
       background-color: #fff;
@@ -205,16 +213,12 @@ body {
   display: inline-block;
   background-color: $accent;
   color: #fff;
-  padding: 12px 32px;
-  font-size: 18px;
+  padding: size(12, 8) size(32, 24);
+  font-size: size(18, 14);
   letter-spacing: 0.03em;
   border-radius: 6px;
   transition: color .3s, outline-color .3s, background-color .3s, box-shadow .3s;
   outline: 2px solid transparent;
-
-  @include r($phone) {
-    padding: 8px 24px;
-  }
 
   &:focus {
     background-color: rgba($accent, .1);
@@ -244,17 +248,13 @@ body {
 
 
 .td-link {
-  font-size: 20px;
+  font-size: size(20, 16);
   line-height: 1.5;
   color: $title;
   outline: 2px solid transparent;
   border-radius: 5px;
   text-decoration: underline;
   transition: outline-color .3s, color .3s, text-shadow .3s;
-
-  @include r($phone) {
-    font-size: 16px;
-  }
 
   &:focus {
     outline-color: rgba($accent, .7);
@@ -310,11 +310,7 @@ body {
 }
 
 .mb-120 {
-  margin-bottom: 120px;
-
-  @include r($tablet) {
-    margin-bottom: size(120, 36);
-  }
+  margin-bottom: size(120, 40);
 }
 
 .hide {
@@ -336,110 +332,5 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-
-  @include r($tablet-2) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include r($tablet) {
-    gap: 20px;
-  }
-
-  &.swiper-wrapper {
-    @include r($phone) {
-      gap: 0;
-    }
-  }
 }
 
-.burger {
-  min-width: 30px;
-  height: 20px;
-  position: relative;
-  color: $title;
-  display: none;
-  margin-right: 7px;
-
-  @include r($tablet-2) {
-    display: flex;
-    order: 1;
-  }
-
-  &__line {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 1px;
-    background-color: $title;
-    transition: tranform .3s;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $title;
-    transition: transform .3s;
-  }
-
-  &::after {
-    top: calc(100% - 1px);
-  }
-}
-
-.burger-close {
-  opacity: 0;
-  transition: opacity .3s;
-  position: absolute;
-  top: 19px;
-  right: 26px;
-
-  @include r($tablet-2) {
-
-    &::before,
-    &::after {
-      content: '';
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      color: $title;
-    }
-
-    &::before {
-      right: 0;
-      top: 0;
-      height: 1px;
-      background-color: $title;
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      right: 0;
-      top: 0;
-      height: 1px;
-      background-color: $title;
-      transform: rotate(-45deg);
-    }
-  }
-}
-
-.lock {
-  overflow: hidden;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}

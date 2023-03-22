@@ -6,10 +6,6 @@
   overflow: hidden;
   transition: box-shadow .3s;
 
-  @include r($tablet-2) {
-    max-width: 100%;
-  }
-
   &:hover {
     box-shadow: 0 3px 15px 0 rgba($accent, .5);
 
@@ -21,8 +17,9 @@
   &__head {
     overflow: hidden;
     @include adaptive-image(370, 300);
+
     @include r($phone) {
-      padding-bottom: 87%;
+      padding-bottom: 300px;
     }
   }
 

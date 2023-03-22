@@ -1,11 +1,45 @@
 .restaurants {
   &__list {
-    margin-bottom: 36px;
+    box-sizing: border-box !important;
 
-    &.swiper-wrapper {
+    @include r($tablet-2) {
+      grid-template-columns: repeat(2, minmax(auto, 370px));
+      gap: 10px;
+      justify-content: center;
+    }
+
+    @include r($phone) {
+      display: flex;
+      justify-content: initial;
+      gap: initial;
+      margin-bottom: 30px;
+    }
+
+    .content-card {
       @include r($phone) {
-        display: flex;
+        margin: 0 auto;
       }
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    @include r($phone) {
+      overflow: hidden;
+    }
+  }
+
+  &__dots {
+    @extend .reviews__dots;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  &__dot {
+    @extend .reviews__dot;
+
+    &--active {
+      @extend .reviews__dot--active;
     }
   }
 }
@@ -27,6 +61,7 @@
       display: flex;
       gap: 15px;
       padding-bottom: 2px;
+      justify-content: center;
     }
 
     &__dot {
