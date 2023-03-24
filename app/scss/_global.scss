@@ -12,12 +12,50 @@ body {
   padding-top: size(159, 72);
 }
 
-
 .container {
   max-width: 1200px;
   padding: 0 15px;
   width: 100%;
   margin: 0 auto;
+}
+
+.breadcrumbs {
+  background-color: rgba($accent, .1);
+  padding: 25px 0 22px;
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    color: #505050;
+    font-size: 14px;
+    padding-right: 16px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2px;
+      mask-image: url(../images/sprite.svg#icon-chevron-right);
+      mask-position: center;
+      mask-repeat: no-repeat;
+      width: 10px;
+      height: 10px;
+      background-color: #C1C1C1;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 .icon {
@@ -143,6 +181,27 @@ body {
   &--burger-menu {
     &::before {
       mask-image: url(../images/sprite.svg#icon-burger);
+    }
+  }
+
+  &--arrow-down {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-chevron-down);
+      order: 2;
+    }
+  }
+
+  &--pag-prev {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-chevron-left);
+      order: 2;
+    }
+  }
+
+  &--pag-next {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-chevron-right);
+      order: 2;
     }
   }
 
@@ -334,3 +393,66 @@ body {
   gap: 30px;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__item {}
+
+  &__prev,
+  &__next {
+    width: 48px;
+    height: 48px;
+    background-color: rgba($accent, .2);
+
+    &::before {
+      min-width: 10px;
+      height: 10px;
+    }
+
+    &:hover {
+      &::before {
+        background-color: $title;
+      }
+    }
+  }
+
+  &__btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($accent, .2);
+    outline: 1px solid transparent;
+
+    &--active {
+      outline-color: $title;
+    }
+
+
+    &:hover {
+      background-color: $accent;
+      color: #fff;
+    }
+
+    &:focus {
+      outline-color: $accent;
+      background-color: rgba($accent, .2);
+    }
+
+    &:active {
+      box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.15);
+      color: $title;
+      outline-color: transparent;
+    }
+  }
+}

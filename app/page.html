@@ -5,24 +5,99 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <title>Simple Food</title>
+  <title>Simple Food | </title>
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="header__nav">
-        <a class="logo" href="#">
-          <img class="logo__img" src="images/logo.svg" alt="Логотип">
-        </a>
-        <ul class="menu">
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <nav class="header__nav">
+          <a class="logo header__logo" href="#body">
+            <img class="logo__img" src="images/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
+          </a>
+          <ul class="menu header__menu">
+            <li class="menu__item">
+              <a class="menu__link menu__link--active" href="#">Головна</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Страви</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Контакти</a>
+            </li>
+            <address class="contacts header__contacts">
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--address" href="#">вул. Т.Г.Шевченка, 1</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--phone" href="tel:380501112233">380501112233</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--email" href="mailto:support@sfood.com">support@sfood.com</a>
+                </li>
+              </ul>
+              <ul class="social">
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood у фейсбук</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-facebook); mask-image:url(images/sprite.svg#icon-facebook);"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood в твіттері</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-twitter); mask-image:url(images/sprite.svg#icon-twitter);"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood в інстраграмі</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-instagram); mask-image:url(images/sprite.svg#icon-instagram);"></span>
+                  </a>
+                </li>
+              </ul>
+            </address>
+          </ul>
+          <div class="header__actions">
+            <button class="btn-sm icon icon--search" type="button">
+              <span class="sr-only">
+                Шукати товари
+              </span>
+            </button>
+            <button class="btn-sm icon header__btn icon--cart" type="button">
+              <span class="sr-only">
+                Переглянути кошик. Кількість товарів у кошику:
+              </span>
+              <span class="btn-counter">4</span>
+            </button>
+            <button class="burger icon icon--burger-menu">
+              <span class="sr-only">показати меню</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="nav-mobile">
+        <div class="nav-mobile__head">
+          <a class="logo nav-mobile__logo" href="#body">
+            <img class="logo__img" src="images/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
+          </a>
+          <button class="close-btn icon icon--close" type="button">
+            <span class="sr-only">закрити меню</span>
+          </button>
+        </div>
+        <ul class="menu nav-mobile__menu">
           <li class="menu__item">
             <a class="menu__link menu__link--active" href="#">Головна</a>
           </li>
@@ -32,101 +107,163 @@
           <li class="menu__item">
             <a class="menu__link" href="#">Контакти</a>
           </li>
-          <button class="user-nav__btn user-nav--search icon-btn" type="button"></button>
-          <button class="user-nav__btn user-nav--cart icon-btn" type="button">
-            <span class="user-nav__num">4</span>
-          </button>
         </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="main">
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <form class="footer-form" action="#">
-          <a class="logo footer-logo" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="Логотип">
-          </a>
-          <label class="footer-form__label sr-only" for="email"></label>
-          <input class="footer-form__input" type="text" placeholder="Ваш email" id="email" required>
-          <button class="btn footer-form__btn btn--with-icon">Підписатися</button>
-        </form>
-        <div class="footer-menu">
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Як це працює</a>
+        <address class="contacts nav-mobile__contacts">
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <a class="contacts__link icon icon--address" href="#">вул. Т.Г.Шевченка, 1</a>
             </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Продукти</a>
+            <li class="contacts__item">
+              <a class="contacts__link icon icon--phone" href="tel:380501112233">380501112233</a>
             </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Страви</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Меню</a>
+            <li class="contacts__item">
+              <a class="contacts__link icon icon--email" href="mailto:support@sfood.com">support@sfood.com</a>
             </li>
           </ul>
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Про нас</a>
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="sr-only">Відвідати сторінку SimpleFood у фейсбук</span>
+                <span class="social__icon"
+                  style="-webkit-mask-image:url(images/sprite.svg#icon-facebook); mask-image:url(images/sprite.svg#icon-facebook);"></span>
+              </a>
             </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Новини</a>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="sr-only">Відвідати сторінку SimpleFood в твіттері</span>
+                <span class="social__icon"
+                  style="-webkit-mask-image:url(images/sprite.svg#icon-twitter); mask-image:url(images/sprite.svg#icon-twitter);"></span>
+              </a>
             </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Партнери</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">ЧаПи</a>
-            </li>
-          </ul>
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Застосунок</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Блог</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Що нового?</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Мапа сайту</a>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="sr-only">Відвідати сторінку SimpleFood в інстраграмі</span>
+                <span class="social__icon"
+                  style="-webkit-mask-image:url(images/sprite.svg#icon-instagram); mask-image:url(images/sprite.svg#icon-instagram);"></span>
+              </a>
             </li>
           </ul>
-        </div>
-        <div class="footer-menu__address">
-          <ul class="footer-menu__data">
-            <li class="footer-menu__location">вул. Т.Г.Шевченка, 1</li>
-            <li class="footer-menu__phone">
-              <a class="footer-menu__phone-link" href="tel:380501112233">380501112233</a>
-            </li>
-            <li class="footer-menu__mail">
-              <a class="footer-menu__mail-link" href="mailto:support@sfood.com">support@sfood.com</a>
-            </li>
-          </ul>
-          <ul class="footer-menu__social">
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--facebook" href="#"></a>
-            </li>
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--twitter" href="#"></a>
-            </li>
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--instagram" href="#"></a>
-            </li>
-          </ul>
-        </div>
+        </address>
       </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="copy">© 2023 Simple Food</p>
-    </div>
-  </footer>
-
-  <script src="js/main.min.js"></script>
+    </header>
+    <main class="main">
+      <section class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">Головна</a>
+            </li>
+            <li class="breadcrumbs__item">Каталог продуктів</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <section class="footer__content">
+          <h2 class="sr-only">Додаткова інформація</h2>
+          <div class="footer__subscription">
+            <h3 class="sr-only">Інформація про підписку</h3>
+            <a class="logo footer__logo" href="#body">
+              <img class="logo__img" src="images/logo.svg" alt="Логотип SimpleFood" width="200" height="39">
+            </a>
+            <div class="subscription">
+              <form class="form" action="#">
+                <label class="sr-only" for="subscription">Ваш email для підписки</label>
+                <input class="form__field" placeholder="Ваш email" type="email" id="subscription" name="subscription"
+                  required>
+                <button class="btn icon icon--send subscription__btn" type="submit">Підписатися</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer__nav">
+            <h3 class="sr-only">Навігація по сайту</h3>
+            <ul class="menu footer__menu">
+              <li class="menu__item">
+                <a class="menu__link" href="#">Як це працює</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Продукти</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Страви</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Меню</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Про нас</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Новини</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Партнери</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">ЧаПи</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Застосунок</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Блог</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Що нового?</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Мапа сайту</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__contacts">
+            <h3 class="sr-only">Контактна інформація, соцмережі</h3>
+            <address class="contacts">
+              <ul class="contacts__list">
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--address" href="#">вул. Т.Г.Шевченка, 1</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--phone" href="tel:380501112233">380501112233</a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link icon icon--email" href="mailto:support@sfood.com">support@sfood.com</a>
+                </li>
+              </ul>
+              <ul class="social">
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood у фейсбук</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-facebook); mask-image:url(images/sprite.svg#icon-facebook);"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood в твіттері</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-twitter); mask-image:url(images/sprite.svg#icon-twitter);"></span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#">
+                    <span class="sr-only">Відвідати сторінку SimpleFood в інстраграмі</span>
+                    <span class="social__icon"
+                      style="-webkit-mask-image:url(images/sprite.svg#icon-instagram); mask-image:url(images/sprite.svg#icon-instagram);"></span>
+                  </a>
+                </li>
+              </ul>
+            </address>
+          </div>
+        </section>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2023 Simple Food
+      </div>
+    </footer>
+  </div>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

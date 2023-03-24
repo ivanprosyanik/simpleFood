@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const filterBtns = document.querySelectorAll(".categories-nav__btn");
+  const filterBtns = document.querySelectorAll(".categories-nav__btn, .filter-category__btn, .filter-offers__input");
   const grid = document.querySelector(".categories-list");
 
   filterBtns.forEach((btn) => {
@@ -93,5 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   };
-});
 
+});
+$(".filter-price__input").ionRangeSlider({
+  type: "double",
+  onStart: function (data) {
+    $('.filter-price__from').text(data.from);
+    $('.filter-price__to').text(data.to);
+  },
+  onChange: function (data) {
+    $('.filter-price__from').text(data.from);
+    $('.filter-price__to').text(data.to);
+  },
+});
+$('.select-style').styler({
+  selectPlaceholder: 'За назвою',
+});

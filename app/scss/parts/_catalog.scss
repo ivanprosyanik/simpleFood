@@ -1,0 +1,37 @@
+.catalog {
+  padding-top: 60px;
+
+  &__title {
+    text-align: left;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.catalog-top {
+  display: flex;
+  justify-content: space-between;
+
+  &__filter-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__sorts {}
+}
+
+
+
+
+.catalog-list {
+  &__grid {
+    grid-template-columns: repeat(4, 210px);
+    gap: 10px;
+    margin-bottom: size(60, 30);
+  }
+
+}

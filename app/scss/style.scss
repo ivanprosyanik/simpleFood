@@ -3,7 +3,6 @@
 @import 'colors';
 @import 'fonts';
 @import 'reset';
-@import 'libs';
 @import 'global';
 
 @import 'parts/menu';
@@ -19,6 +18,9 @@
 @import 'parts/reviews';
 @import 'parts/reviews-card';
 @import 'parts/download';
+
+@import 'parts/catalog';
+@import 'parts/catalog-filters';
 
 
 
