@@ -205,6 +205,12 @@ body {
     }
   }
 
+  &--filters {
+    &::before {
+      mask-image: url(../images/sprite.svg#icon-filters);
+    }
+  }
+
   &:hover {
     &::before {
       background-color: #fff;
@@ -405,7 +411,14 @@ body {
     gap: 6px;
   }
 
-  &__item {}
+  &__item {
+    @include r($phone) {
+      &:nth-child(2),
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
 
   &__prev,
   &__next {
@@ -420,7 +433,7 @@ body {
 
     &:hover {
       &::before {
-        background-color: $title;
+        background-color: #fff;
       }
     }
   }
@@ -433,6 +446,7 @@ body {
     align-items: center;
     background-color: rgba($accent, .2);
     outline: 1px solid transparent;
+    transition: outline-color .3s, background-color .3s, color .3s, box-shadow .3s;
 
     &--active {
       outline-color: $title;
@@ -455,4 +469,9 @@ body {
       outline-color: transparent;
     }
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
 }

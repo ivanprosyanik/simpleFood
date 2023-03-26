@@ -1,6 +1,7 @@
 .restaurants {
   &__list {
     box-sizing: border-box !important;
+    padding-bottom: 3px;
 
     @include r($tablet-2) {
       grid-template-columns: repeat(2, minmax(auto, 370px));

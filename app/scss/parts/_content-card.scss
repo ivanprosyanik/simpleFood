@@ -5,6 +5,8 @@
   box-shadow: 0 3px 3px 0 rgba($title, 0.1);
   overflow: hidden;
   transition: box-shadow .3s;
+  min-height: 392px;
+  height: 100%;
 
   &:hover {
     box-shadow: 0 3px 15px 0 rgba($accent, .5);

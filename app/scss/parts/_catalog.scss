@@ -8,6 +8,7 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
   }
 }
 
@@ -15,23 +16,47 @@
   display: flex;
   justify-content: space-between;
 
+  &__filter {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: right;
+    margin-bottom: 30px;
+    @include r($phone) {
+      justify-content: center;
+    }
+  }
+
   &__filter-form {
     display: flex;
     align-items: center;
     gap: 20px;
   }
 
-  &__sorts {}
+  @include r($tablet-2) {
+    display: block;
+  }
 }
 
 
 
 
 .catalog-list {
+  width: 100%;
+  margin: 0 auto;
+
   &__grid {
-    grid-template-columns: repeat(4, 210px);
-    gap: 10px;
-    margin-bottom: size(60, 30);
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 60px;
+
+
+    @include r($tablet-2) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include r($phone) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
 }

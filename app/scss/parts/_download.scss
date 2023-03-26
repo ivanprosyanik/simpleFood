@@ -36,6 +36,10 @@
     display: flex;
     gap: 30px;
   }
+
+  &__catalog {
+    order: 3;
+  }
 }
 
 .app-icon {

@@ -59,22 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 992) {
     const burger = document.querySelector('.burger');
     closeBtn = document.querySelector('.close-btn');
-    const mobileNav = document.querySelector('.nav-mobile')
-
+    const mobileNav = document.querySelector('.nav-mobile');
+    const filterNavBtn = document.querySelector('.filter__btn-open');
+    const filterMobile = document.querySelector('.filter__mobile');
     burger.addEventListener("click", () => {
       body.classList.add('lock');
       mobileNav.classList.add('open')
     })
 
+    filterNavBtn.addEventListener("click", () => {
+      body.classList.add('lock');
+      filterMobile.classList.add('open')
+    })
+
     closeBtn.addEventListener("click", () => {
       body.classList.remove('lock');
-      mobileNav.classList.remove('open')
+      mobileNav.classList.remove('open');
+      filterMobile.classList.remove('open')
     })
 
     document.addEventListener('click', function (e) {
-      if (e.target !== closeBtn && e.target !== burger && e.target !== mobileNav) {
+      if (e.target !== closeBtn && e.target !== burger && e.target !== mobileNav && e.target !== filterNavBtn && e.target !== filterMobile) {
         body.classList.remove('lock');
-        mobileNav.classList.remove('open')
+        mobileNav.classList.remove('open');
+        filterMobile.classList.remove('open');
       }
     })
   }

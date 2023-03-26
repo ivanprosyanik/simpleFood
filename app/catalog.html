@@ -11,9 +11,9 @@
   <link rel="manifest" href="favicon/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
   <link href="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Simple Food | Каталог продуктів</title>
 </head>
@@ -28,10 +28,10 @@
           </a>
           <ul class="menu header__menu">
             <li class="menu__item">
-              <a class="menu__link menu__link--active" href="#">Головна</a>
+              <a class="menu__link" href="#">Головна</a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="#">Страви</a>
+              <a class="menu__link menu__link--active" href="#">Страви</a>
             </li>
             <li class="menu__item">
               <a class="menu__link" href="#">Контакти</a>
@@ -165,6 +165,11 @@
           <div class="catalog-top">
             <h2 class="title catalog__title">Каталог продуктів</h2>
             <div class="catalog-top__filter">
+              <button class="filter__btn-open btn-sm icon icon--filters" type="button">
+                <span class="sr-only">
+                  Відкрити фільтри
+                </span>
+              </button>
               <form class="catalog-top__filter-form" action="#">
                 <select class="catalog-top__filter-sort select-style icon icon--arrow-down">
                   <option value="">За назвою</option>
@@ -181,6 +186,92 @@
           </div>
           <div class="catalog__inner">
             <div class="catalog__filters filter">
+              <div class="filter-category filter__item">
+                <div class="filter__item-head">
+                  <h3 class="filter__title">Категорії</h3>
+                </div>
+                <ul class="filter-category__list">
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-1" type="button">Бургери</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-2" type="button">Піца</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-3" type="button">Сендвічі</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-4" type="button">Азійська кухня</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-5" type="button">Сети</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-6" type="button">Європейська
+                      кухня</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-7" type="button">Напої</button>
+                  </li>
+                  <li class="filter-category__item">
+                    <button class="filter-category__btn" data-filter="category-8" type="button">Алкоголь</button>
+                  </li>
+                </ul>
+              </div>
+              <div class="filter-offers filter__item">
+                <div class="filter__item-head">
+                  <h3 class="filter__title">Пропозиції</h3>
+                </div>
+                <form class="filter-offers__form" action="#">
+                  <label class="filter-offers__label" for="sale">
+                    <div class="filter-offers__box">
+                      <input class="filter-offers__input" type="checkbox" name="sale" id="sale"
+                        data-filter="category-1">
+                      <span class="filter-offers__checkbox filter-offers__checkbox--item"></span>
+                    </div>
+                    <span class="filter-offers__text">Зі знижкою</span>
+                  </label>
+                  <label class="filter-offers__label" for="new">
+                    <div class="filter-offers__box">
+                      <input class="filter-offers__input" type="checkbox" name="new" id="new" data-filter="category-1">
+                      <span class="filter-offers__checkbox filter-offers__checkbox--item"></span>
+                    </div>
+                    <span class="filter-offers__text">Новинка</span>
+                  </label>
+                  <label class="filter-offers__label" for="hit">
+                    <div class="filter-offers__box">
+                      <input class="filter-offers__input" type="checkbox" name="hit" id="hit" data-filter="category-1">
+                      <span class="filter-offers__checkbox filter-offers__checkbox--item"></span>
+                    </div>
+                    <span class="filter-offers__text">Хіт сезону</span>
+                  </label>
+
+                </form>
+              </div>
+              <div class="filter-price filter__item">
+                <div class="filter__item-head">
+                  <h3 class="filter__title">Ціна</h3>
+                </div>
+                <form class="filter-price__form" action="#">
+                  <input class="filter-price__input" type="text" data-min="0" data-max="1200" data-from="100"
+                    data-to="1000">
+                  <label class="filter-price__label">
+                    <div class="filter-price__wrapper">
+                      від:<span class="filter-price__from">100</span>₴
+                    </div>
+                    <div class="filter-price__wrapper">
+                      до:<span class="filter-price__to">1000</span>₴
+                    </div>
+                  </label>
+                </form>
+              </div>
+            </div>
+            <div class="catalog__filters filter filter__mobile">
+              <div class="catalog__filters-head">
+                <button class="close-btn icon icon--close filter__btn-close" type="button">
+                  <span class="sr-only">закрити меню</span>
+                </button>
+              </div>
               <div class="filter-category filter__item">
                 <div class="filter__item-head">
                   <h3 class="filter__title">Категорії</h3>
@@ -445,7 +536,7 @@
                 </li>
               </ul>
               <div class="pagination">
-                <a class="pagination__prev icon icon--pag-prev" href="#"></a>
+                <button class="pagination__btn pagination__prev icon icon--pag-prev"></button>
                 <ul class="pagination__list">
                   <li class="pagination__item">
                     <button class="pagination__btn pagination__btn--active" type="button">1</button>
@@ -463,135 +554,49 @@
                     <button class="pagination__btn" type="button">10</button>
                   </li>
                 </ul>
-                <a class="pagination__next icon icon--pag-next" href="#"></a>
+                <button class="pagination__btn pagination__next icon icon--pag-next"></button>
               </div>
               <div class="catalog-list__actions"></div>
             </div>
           </div>
         </div>
       </section>
+
       <section class="restaurants mb-120 sales">
         <div class="container">
           <h2 class="title sales__title">Акції та знижки</h2>
           <div class="resto__slider swiper">
-            <ul class="cols swiper-wrapper sales__list">
-              <li class="restaurants__item swiper-slide">
+            <ul class="restaurants__list cols swiper-wrapper sales__list">
+              <li class="restaurants__item sales__item swiper-slide">
                 <article class="content-card">
                   <figure class="content-card__head">
                     <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_1.jpg"
                       alt="Зображення ресторану">
                   </figure>
                   <div class="content-card__content">
-                    <h3 class="content-card__title">Blaze Pizza</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="11:00">11:00</time>:<time datetime="23:00">23:00</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
+                    <h3 class="content-card__title">Знижка на другу піцу</h3>
                   </div>
                 </article>
               </li>
-              <li class="restaurants__item swiper-slide">
-                <article class="content-card">
-                  <figure class="content-card__head">
-                    <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_2.jpg"
-                      alt="Зображення ресторану">
-                  </figure>
-                  <div class="content-card__content">
-                    <h3 class="content-card__title">Pizza Runcho</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="12:00">12:00</time>:<time datetime="21:00">21:00</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </li>
-              <li class="restaurants__item swiper-slide">
-                <article class="content-card">
-                  <figure class="content-card__head">
-                    <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_3.jpg"
-                      alt="Зображення ресторану">
-                  </figure>
-                  <div class="content-card__content">
-                    <h3 class="content-card__title">Pizza Hut</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="11:00">11:00</time>:<time datetime="22:00">22:00</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </li>
-              <li class="restaurants__item swiper-slide">
-                <article class="content-card">
-                  <figure class="content-card__head">
-                    <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_4.jpg"
-                      alt="Зображення ресторану">
-                  </figure>
-                  <div class="content-card__content">
-                    <h3 class="content-card__title">McDonald`s</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="06:00">06:00</time>:<time datetime="23:00">23:00</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-              </li>
-              <li class="restaurants__item swiper-slide">
+              <li class="restaurants__item sales__item swiper-slide">
                 <article class="content-card">
                   <figure class="content-card__head">
                     <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_5.jpg"
                       alt="Зображення ресторану">
                   </figure>
                   <div class="content-card__content">
-                    <h3 class="content-card__title">KFC</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="06:00">06:00</time>:<time datetime="23:30">23:30</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
+                    <h3 class="content-card__title">Картопелька з KFC задарма при замовленні бургера</h3>
                   </div>
                 </article>
               </li>
-              <li class="restaurants__item swiper-slide">
+              <li class="restaurants__item sales__item swiper-slide">
                 <article class="content-card">
                   <figure class="content-card__head">
                     <img class="content-card__image" width="370" height="300" src="images/restaurants/resto_6.jpg"
                       alt="Зображення ресторану">
                   </figure>
                   <div class="content-card__content">
-                    <h3 class="content-card__title">Star Burgers</h3>
-                    <div class="content-card__actions">
-                      <div class="content-card__time icon icon--time">
-                        <span class="sr-only">Заклад відкрито в такий час:</span>
-                        <time datetime="09:00">09:00</time>:<time datetime="21:00">21:00</time>
-                      </div>
-                      <a class="content-card__btn btn icon icon--arrow" href="#">
-                        <span class="sr-only">Перейти на сторіну ресторану</span>
-                      </a>
-                    </div>
+                    <h3 class="content-card__title">Чорні бургери на чорний день</h3>
                   </div>
                 </article>
               </li>
@@ -600,7 +605,8 @@
           </div>
         </div>
       </section>
-      <section class="download mb-120" style="background-image: url(images/download_bg.jpg);">
+
+      <section class="download mb-120 download__catalog" style="background-image: url(images/download_bg.jpg);">
         <div class="container">
           <div class="download__content">
             <h2 class="title download__title">
@@ -740,6 +746,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
