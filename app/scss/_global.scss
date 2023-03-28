@@ -184,24 +184,17 @@ body {
     }
   }
 
-  &--arrow-down {
-    &::before {
-      mask-image: url(../images/sprite.svg#icon-chevron-down);
-      order: 2;
-    }
-  }
-
   &--pag-prev {
     &::before {
       mask-image: url(../images/sprite.svg#icon-chevron-left);
-      order: 2;
+      // order: 2;
     }
   }
 
   &--pag-next {
     &::before {
       mask-image: url(../images/sprite.svg#icon-chevron-right);
-      order: 2;
+      // order: 2;
     }
   }
 
@@ -408,11 +401,13 @@ body {
   &__list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
   }
 
   &__item {
     @include r($phone) {
+
       &:nth-child(2),
       &:nth-child(4) {
         display: none;
@@ -420,55 +415,80 @@ body {
     }
   }
 
-  &__prev,
-  &__next {
-    width: 48px;
-    height: 48px;
-    background-color: rgba($accent, .2);
 
+
+  &__disabled {
     &::before {
-      min-width: 10px;
-      height: 10px;
-    }
-
-    &:hover {
-      &::before {
-        background-color: #fff;
-      }
+      background-color: $gray;
     }
   }
 
-  &__btn {
-    width: 48px;
+  &__link {
+    min-width: 48px;
     height: 48px;
-    display: flex;
+    border-radius: 3px;
+    display: block;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: rgba($accent, .2);
+    background-color: rgba($accent, .1);
+    padding: 15px 5px;
     outline: 1px solid transparent;
-    transition: outline-color .3s, background-color .3s, color .3s, box-shadow .3s;
+    transition: all .3s ease-in-out;
 
     &--active {
       outline-color: $title;
     }
 
+    &--prev,
+    &--next {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        min-width: 18px;
+        height: 18px;
+      }
+    }
+
+
+    &:focus {
+      outline-color: $accent;
+      outline-width: 2px;
+    }
 
     &:hover {
       background-color: $accent;
       color: #fff;
     }
 
-    &:focus {
-      outline-color: $accent;
-      background-color: rgba($accent, .2);
-    }
-
     &:active {
+      outline-color: transparent;
       box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.15);
       color: $title;
-      outline-color: transparent;
+      background-color: rgba($accent, .1);
+    }
+
+    &--disabled {
+      &::before {
+        background-color: $gray;
+      }
+
+      &:focus,
+      &:hover,
+      &:active {
+        outline-color: transparent;
+        box-shadow: none;
+        background-color: rgba($accent, .1);
+
+        &::before {
+          background-color: $gray;
+        }
+      }
     }
   }
+
 }
 
 .main {

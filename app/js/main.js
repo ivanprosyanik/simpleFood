@@ -102,18 +102,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-});
-$(".filter-price__input").ionRangeSlider({
-  type: "double",
-  onStart: function (data) {
-    $('.filter-price__from').text(data.from);
-    $('.filter-price__to').text(data.to);
-  },
-  onChange: function (data) {
-    $('.filter-price__from').text(data.from);
-    $('.filter-price__to').text(data.to);
-  },
-});
-$('.select-style').styler({
-  selectPlaceholder: 'За назвою',
+  const rangeSlider = document.querySelector('.range__slider');
+  const inputMin = document.querySelector('.range__input--min');
+  const inputMax = document.querySelector('.range__input--max');
+
+  noUiSlider.create(rangeSlider, {
+    start: [100, 1000],
+    connect: true,
+    padding: [0, 0],
+    animate: true,
+    // cssPrefix: 'noUi-',
+    step: 10,
+    range: {
+      'min': 50,
+      'max': 1200
+    }
+  })
+  rangeSlider.noUiSlider.on('update', function(values, handle) {
+    // let value = values[handle];
+    let value = parseFloat(values[handle]).toFixed(0);
+    if(handle) {
+      inputMax.value = value;
+    } else {
+      inputMin.value = value;
+    }
+  });
+
+  inputMin.addEventListener('change', function() {
+    rangeSlider.noUiSlider.set([this.value, null]);
+  })
+
+  inputMax.addEventListener('change', function() {
+    rangeSlider.noUiSlider.set([null, this.value]);
+  })
 });

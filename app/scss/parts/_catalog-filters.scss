@@ -20,9 +20,13 @@
 
   &__btn-open {
     background-color: rgba($accent, .1);
+    min-width: 47px;
+    height: 47px;
     display: none;
 
     &::before {
+      min-width: 32px;
+      height: 36px;
       background-color: $accent;
     }
 
@@ -33,7 +37,7 @@
 
   &__btn-close {
     background-color: rgba($accent, .1);
-    right: 0; 
+    right: 0;
     margin: 0 20px 20px auto;
   }
 
@@ -55,10 +59,12 @@
     opacity: 0;
     transform: translateY(-200%);
     transition: opacity .3s, transform .3s;
+
     @include r($tablet-2) {
       display: block;
     }
   }
+
   &.open {
     opacity: 1;
     transform: translateY(0);
@@ -163,118 +169,95 @@
   }
 }
 
-.filter-price {
-  &__label {
+.range {
+
+  &__group {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     font-size: 16px;
-    gap: 15px;
-    color: #c2c2c2;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $gray;
+    gap: 5px;
 
-    span {
-      background-color: rgba($accent, .1);
-      padding: 12px 16px;
-      border-radius: 3px;
-      color: $default;
+    &::after {
+      content: '₴';
     }
   }
 
-  &__wrapper {
+  &__items {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
+    margin-bottom: 25px;
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
+  &__input {
+    color: $title;
+    border-radius: 3px;
+    background-color: rgba($accent, .1);
+    text-align: center;
+    padding: 12px;
+    border: 1px solid $silver-200;
+    width: 70px;
   }
 
-  &__to,
-  &__from {
-    outline: 1px solid transparent;
+  .noUi-target {
+    background-color: $gray;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
 
-    &:focus {
-      outline-color: $accent;
+  .noUi-horizontal {
+    width: 240px;
+    height: 2px;
+
+    .noUi-handle {
+      width: 18px;
+      height: 18px;
+      top: -8px;
     }
   }
-}
 
-.irs {
-  order: 2;
-}
+  .noUi-connects {
+    border-radius: 0;
+  }
 
-.irs--flat .irs-line {
-  top: 33px;
-  height: 1px;
-  background-color: #c2c2c2;
-  border-radius: 0;
-}
+  .noUi-connect {
+    background-color: $accent;
+  }
 
-.irs--flat .irs-handle {
-  top: 25px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: #FF6838;
-}
+  .noUi-handle {
+    border-radius: 50%;
+    background-color: $accent;
+    border: none;
+    box-shadow: none;
 
-.irs--flat .irs-handle>i:first-child {
-  display: none;
-}
+    &::before {
+      content: none;
+    }
 
-.irs--flat .irs-bar {
-  top: 33px;
-  height: 2px;
-  background-color: #FF6838;
-}
-
-.irs--flat .irs-from,
-.irs--flat .irs-to,
-.irs--flat .irs-single {
-  color: white;
-  font-size: 10px;
-  line-height: 1.333;
-  text-shadow: none;
-  padding: 1px 5px;
-  background-color: #ed5565;
-  border-radius: 4px;
-}
-
-.irs-from,
-.irs-to,
-.irs-single {
-  display: none;
-}
-
-.irs--flat .irs-min,
-.irs--flat .irs-max {
-  display: none;
-}
-
-.jq-selectbox__select-text {
-  padding-right: 15px;
-}
-
-.jq-selectbox.dropdown.opened {
-  .jq-selectbox__dropdown {
-    display: none;
+    &::after {
+      content: none;
+    }
   }
 }
 
 .select-style {
   border: 1px solid #c2c2c2;
   padding: 15px;
+  padding-right: 41px;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
   border-radius: 3px;
   transition: border-color .3s, color .3s;
 
-  &::before {
-    min-width: 10px;
-    height: 10px;
-
-  }
+  background-image: url(../../images/sprite.svg#icon-chevron-down);
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  background-size: 10px;
 
   &:focus {
     border-color: $accent;
@@ -284,11 +267,5 @@
     border-color: $accent;
     color: $accent;
     cursor: pointer;
-
-    &::before {
-      background-color: $accent;
-    }
   }
-
-  &:active {}
 }

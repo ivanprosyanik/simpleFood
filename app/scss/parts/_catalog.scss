@@ -1,13 +1,17 @@
 .catalog {
-  padding-top: 60px;
+  padding-top: size(60, 40);
 
   &__title {
     text-align: left;
+    margin-bottom: 20px;
+  }
+
+  &__title-download {
+    margin-bottom: 14px;
   }
 
   &__inner {
     display: flex;
-    justify-content: space-between;
     gap: 30px;
   }
 }
@@ -22,12 +26,13 @@
     gap: 20px;
     justify-content: right;
     margin-bottom: 30px;
+
     @include r($phone) {
-      justify-content: center;
+      justify-content: start;
     }
   }
 
-  &__filter-form {
+  &__filter-group {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -47,8 +52,7 @@
 
   &__grid {
     grid-template-columns: repeat(4, 1fr);
-    margin-bottom: 60px;
-
+    margin-bottom: size(60, 30);
 
     @include r($tablet-2) {
       grid-template-columns: repeat(3, 1fr);
@@ -58,5 +62,4 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
 }
