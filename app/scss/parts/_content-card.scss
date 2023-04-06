@@ -35,8 +35,11 @@
 
   &__title {
     font-size: 24px;
-    margin-bottom: 20px;
     font-weight: 400;
+
+    & + #{this}__actions {
+      margin-top: 20px;
+    }
   }
 
   &__actions {

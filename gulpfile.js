@@ -9,6 +9,7 @@ const browserSync = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const fileInclude = require('gulp-file-include');
+const cleanCSS = require('gulp-clean-css');
 
 function browsersync() {
   browserSync.init({
@@ -18,7 +19,6 @@ function browsersync() {
     notify: false
   })
 }
-
 
 function styles() {
   return src('app/scss/style.scss')
@@ -41,21 +41,47 @@ function styles() {
 //   .pipe(browserSync.stream())
 // }
 
-// function images() {
-//   return src('app/images/**/*.*')
-//   .pipe(imagemin([
-//     imagemin.gifsicle({ interlaced: true }),
-//     imagemin.mozjpeg({ quality: 75, progressive: true }),
-//     imagemin.optipng({ optimizationLevel: 5 }),
-//     imagemin.svgo({
-//       plugins: [
-//         { removeViewBox: true },
-//         { cleanupIDs: false }
-//       ]
-//     })
-//   ]))
-//   .pipe(dest('dist/images'))
-// }
+function libsJS() {
+  return src([
+    './node_modules/lightgallery/lightgallery.min.js',
+    './node_modules/lightgallery/plugins/pager/lg-pager.min.js',
+    './node_modules/starry-rating/dist/starry.min.js',
+    './node_modules/nouislider/dist/nouislider.min.js',
+    './node_modules/swiper/swiper-bundle.min.js'
+
+  ])
+    .pipe(concat('libs.min.js'))
+    .pipe(dest('app/js'));
+}
+
+function libsCSS() {
+  return src([
+    './node_modules/lightgallery/css/lightgallery.css',
+    './node_modules/lightgallery/css/lg-pager.css',
+    './node_modules/starry-rating/dist/starry.css',
+    './node_modules/nouislider/dist/nouislider.css',
+    './node_modules/swiper/swiper-bundle.css'
+  ])
+    .pipe(concat('libs.min.css'))
+    .pipe(cleanCSS())
+    .pipe(dest('app/css'));
+}
+
+function images() {
+  return src('app/images/**/*.*')
+    .pipe(imagemin([
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: true },
+          { cleanupIDs: false }
+        ]
+      })
+    ]))
+    .pipe(dest('dist/images'))
+}
 
 const htmlInclude = () => {
   return src(['app/html/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
@@ -88,12 +114,17 @@ function convertFonts() {
 }
 
 function build() {
-  return src([
-    'app/**/*.html',
-    'app/css/style.min.css',
-    'app/js/main.min.js'
-  ], { base: 'app' })
-    .pipe(dest('dist'))
+  return src(
+    [
+      'app/*.html',
+      'app/favicon/**/*.*',
+      'app/fonts/**/*.*',
+      'app/css/*.css',
+      'app/js/*.js',
+      'app/images/**/*.*'
+    ],
+    { base: 'app' })
+    .pipe(dest('dist'));
 }
 
 function cleanDist() {
@@ -112,11 +143,13 @@ exports.styles = styles;
 // exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
-// exports.images = images;
+exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
 exports.convertFonts = convertFonts;
 exports.build = series(cleanDist, build);
 exports.htmlInclude = htmlInclude;
+exports.libsJS = libsJS;
+exports.libsCSS = libsCSS;
 
-exports.default = parallel(htmlInclude, svgSprites, styles, browsersync, watching);
+exports.default = parallel(htmlInclude, svgSprites, styles, images, browsersync, watching);
