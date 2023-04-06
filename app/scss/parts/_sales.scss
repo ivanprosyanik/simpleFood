@@ -1,0 +1,15 @@
+.sales {
+  @include r($phone) {
+    order: 4;
+  }
+  &__title {
+    text-align: left;
+    @include r($phone) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    margin-bottom: 0;
+  }
+}

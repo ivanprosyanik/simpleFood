@@ -1,0 +1,37 @@
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  margin-left: auto;
+
+  @include r($tablet-2) {
+    display: none;
+  }
+
+  &__link {
+    outline: 2px solid transparent;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: outline-color .3s, color .3s, text-shadow .3s;
+
+
+    &:focus {
+      outline-color: rgba($accent, .7);
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px rgba($default, .5);
+      outline-color: transparent;
+    }
+
+    &--active {
+      color: $accent;
+    }
+  }
+}

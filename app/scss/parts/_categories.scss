@@ -2,20 +2,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: size(20, 10);
+  padding: 3px;
+  overflow-x: auto;
+
+  @include r($tablet) {
+    justify-content: flex-start;
+  }
 
   &__btn {
     outline: 1px solid $silver-200;
     border-radius: 5px;
-    font-size: 20px;
-    padding: 13px 32px;
+    font-size: size(20, 14);
+    padding: size(13, 11) size(32, 16);
     color: $title;
     transition: outline-color .3s, color .3s, background-color .3s, box-shadow .3s;
+    white-space: nowrap;
 
     &::before {
-      min-width: 44px;
-      height: 44px;
-      margin-right: 10px;
+      min-width: size(44, 20);
+      height: size(44, 20);
+      margin-right: size(10, 5);
     }
 
     &:focus {
@@ -49,7 +56,7 @@
     &.active {
       background-color: $accent;
       color: #fff;
-      
+
       &::before {
         background-color: #fff;
       }
@@ -60,5 +67,14 @@
 .categories-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+  gap: size(30, 10);
+
+  @include r($tablet-2) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include r($phone) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 5px;
+  }
 }

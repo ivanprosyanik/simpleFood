@@ -1,60 +1,146 @@
-.reviews-quote {
-  align-items: center;
-  padding: 0 40px;
-  &__img {
-    border-radius: 50%;
+.reviews {
+  &__list {
+    margin-bottom: 30px;
+
+    @include r($phone) {
+      margin-bottom: 0;
+    }
   }
 
-  &__inner {
+  &__actions {
+    width: fit-content;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    gap: 40px;
+    gap: 23px;
   }
 
-  &__text {
-    max-width: 570px;
-    line-height: 1.5;
-    font-style: italic;
-    margin-bottom: 30px;
-    position: relative;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: contain;
-      background-color: $gray;
-    }
+  &__btn {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 2px solid transparent;
+    border: 3px solid $accent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .3s, outline-color .3s, border-color .3s;
 
     &::before {
-      mask-image: url(../../images/sprite.svg#icon-quote-open);
-      top: 0;
-      left: -40px;
+      content: '';
+      min-width: 19px;
+      height: 19px;
+      display: inline-block;
+      mask-image: url('../images/sprite.svg#icon-right');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $accent;
+      transition: background-color .3s;
     }
 
-    &::after {
-      mask-image: url(../../images/sprite.svg#icon-quote-close);
-      bottom: 0;
-      right: -40px;
+    @include r($phone) {
+      position: absolute;
+      top: 30px;
+    }
+
+    &--prev {
+      &::before {
+        mask-image: url('../images/sprite.svg#icon-left');
+      }
+
+      @include r($phone) {
+        left: calc(50% - 140px);
+      }
+    }
+
+    &--next {
+      @include r($phone) {
+        right: calc(50% - 140px);
+      }
+    }
+
+    &:focus {
+      outline-color: rgba($accent, .5);
+    }
+
+    &:hover {
+      background-color: rgba($accent, .1);
+      border-color: rgba($accent, .5);
+      outline-color: transparent;
+
+      &::before {
+        background-color: rgba($accent, .5);
+      }
+    }
+
+    &:active {
+      background-color: rgba($accent, .1);
+      border-color: rgba($accent, .5);
+      outline-color: transparent;
+
+      &::before {
+        background-color: $accent;
+      }
+    }
+
+    &[disabled] {
+      border-color: $gray;
+
+      &:focus,
+      &:hover,
+      &:active {
+        border-color: $gray;
+        outline-color: transparent;
+        background-color: inherit;
+      }
+
+      &::before {
+        background-color: $gray;
+      }
     }
   }
 
-  &__name {
-    font-weight: 500;
+  &__dots {
+    display: flex;
+    gap: 15px;
   }
 
-  &__job {
-    display: block;
-    color: $default;
-    font-weight: 400;
-    padding-top: 15px;
-    font-size: 14px;
+  &__dot {
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $gray;
+    cursor: pointer;
+    outline: 2px solid transparent;
+    transition: background-color .3s, outline-color .3s;
+
+    &--active {
+      background-color: $accent;
+    }
+
+    &:focus {
+      outline-color: $accent;
+    }
+
+    &:hover {
+      background-color: rgba($accent, .1);
+      outline-color: rgba($accent, .5);
+    }
+
+    &:active {
+      outline-color: transparent;
+      background-color: rgba($accent, .5);
+    }
+  }
+
+  &__slider {
+    .reviews__dots {
+      @include r($phone) {
+        display: none;
+      }
+    }
   }
 }
-

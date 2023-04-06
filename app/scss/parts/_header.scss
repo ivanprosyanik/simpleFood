@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   z-index: 99;
-  background-color: $background;
-  padding: 60px 0;
+  background-color: #fff;
+  padding: size(60, 14) 0;
   border-bottom: 3px solid transparent;
   transition: padding .3s, border-color .3s;
 
@@ -14,16 +14,68 @@
     border-color: $accent;
   }
 
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: rgba($default, .5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    transition: opacity .3s;
+  }
+
+@at-root .lock {
+    overflow: hidden;
+
+    .header {
+      &::before {
+        @include r($tablet-2) {
+          opacity: 1;
+          visibility: visible;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    @include r($phone) {
+      width: 115px;
+    }
+  }
+
+  &__menu {
+    @include r($tablet-2) {
+      display: none;
+    }
+  }
+
+
+  &__contacts {
+    display: none;
+  }
+
+
   &__nav {
     display: flex;
     align-items: center;
     gap: 50px;
+    z-index: 5;
+
+    @include r($phone) {
+      gap: 17px;
+    }
   }
 
   &__actions {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include r($tablet-2) {
+      margin-left: auto;
+    }
   }
 
   &__btn {
@@ -39,39 +91,6 @@
         color: #fff;
         background-color: $accent;
       }
-    }
-  }
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 44px;
-  margin-left: auto;
-
-  &__link {
-    outline: 2px solid transparent;
-    font-size: 18px;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: outline-color .3s, color .3s, text-shadow .3s;
-
-    &:focus {
-      outline-color: rgba($accent, .7);
-    }
-
-    &:hover {
-      color: $accent;
-    }
-
-    &:active {
-      text-shadow: 2px 2px 5px rgba($default, .5);
-      outline-color: transparent;
-    }
-
-    &--active {
-      color: $accent;
     }
   }
 }

@@ -1,0 +1,85 @@
+.reviews-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: size(40, 20);
+  padding: 5px size(90, 0);
+
+  &__content {
+    max-width: 650px;
+    padding: 0 40px;
+    flex-basis: 320px;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__img {
+    border-radius: 50%;
+    max-width: size(300, 100);
+    width: 100%;
+    height: size(300, 100);
+    flex-basis: 100px;
+    margin: 0 auto;
+    object-fit: contain;
+
+    @include r($phone) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__text {
+    font-size: size(20, 14);
+    line-height: 1.5;
+    position: relative;
+    margin-bottom: size(30, 20);
+    font-style: italic;
+
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      mask-image: url('../images/sprite.svg#icon-quote-open');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $gray;
+    }
+
+    &::before {
+      top: 0;
+      left: -40px;
+
+      @include r($phone) {
+        top: -10px;
+        left: -35px;
+      }
+    }
+
+    &::after {
+      bottom: 0;
+      right: -40px;
+      mask-image: url('../images/sprite.svg#icon-quote-close');
+
+      @include r($phone) {
+        bottom: 10px;
+        right: -35px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: size(20, 16);
+    font-weight: 500;
+    color: $accent;
+    margin-bottom: size(15, 10);
+  }
+
+  &__details {
+    font-size: 14px;
+  }
+}

@@ -3,18 +3,28 @@
 @import 'colors';
 @import 'fonts';
 @import 'reset';
-@import 'libs';
 @import 'global';
 
+@import 'parts/menu';
 @import 'parts/header';
+@import 'parts/nav-mobile';
+@import 'parts/breadcrumbs';
+
 @import 'parts/hero-section';
 @import 'parts/popular-section';
 @import 'parts/categories';
 @import 'parts/product-card';
-@import 'parts/footer';
 @import 'parts/features';
 @import 'parts/restaurants';
-@import 'parts/restaurants-card';
+@import 'parts/content-card';
 @import 'parts/reviews';
-@import 'parts/reviews-slider';
-@import 'parts/download-section';
+@import 'parts/reviews-card';
+@import 'parts/download';
+
+@import 'parts/catalog';
+@import 'parts/sales';
+
+@import 'parts/product-page';
+
+
+@import 'parts/footer';
