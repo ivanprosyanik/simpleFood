@@ -265,9 +265,9 @@ document.addEventListener("DOMContentLoaded", () => {
       readOnly: true,
       beginWith: 20 * stars,
       icons: {
-        blank: "../images/star-empty.svg",
-        hover: "../images/star-fill.svg",
-        active: "../images/star-fill.svg",
+        blank: "images/star-empty.svg",
+        hover: "images/star-fill.svg",
+        active: "images/star-fill.svg",
       },
     });
   });
